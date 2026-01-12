@@ -1,31 +1,62 @@
 Basics :
 
-Node.js – 
-Node.js is open source, cross platform, backend Javascript run time environment which runs on V8 engine and executes the JavaScript code outside a web browser
+To start working with Typescript, install
+- Node.js
+- Typescript compiler (It will compile the TypeScript code and convert into JavaScript.)
+- VSCode 
 
-Command – npm int playwright
-This will create a new node project in the playwright structure. This is a playwright skeleton required for automation. This command also installs all the dependencies. Run this command in Terminal section of Visual Studio Code
+
+Node.js – 
+Node.js is open source, cross platform, backend Javascript run time environment which runs on V8 engine and executes the JavaScript code outside a web browser. It is like a JRE for JAVA.
+Once you install node.js, you will automatically get NPM.
+
+NPM -
+Node Package Manager. By using this, we can install any softwares which run on node.js.
+
+Command – 
 
 
 Terminal Commands :
+
+npm install -g typescript (to install the typescript compiler)
+npm int playwright (This will create a new node project in the playwright structure. This is a playwright skeleton required for automation. This command also installs all the dependencies. Run this command in Terminal section of Visual Studio Code)
+
+tsc (Stands for TypeScript compiler)
+tsc <Path+TypeScriptFileName> (To compile the typescript file)
+
+For the first time, you get an UnauthorizedAccess error when you try to compile a typescript file. 
+Run the below command to resolve the access issue
+
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
+
+node <FileName> (To run the typescript file. Go into the folder where .js files are present and run this command. Here <FileName> is .js file)
+Example : node Demo.js
+
+npm install -g tsx (Stands for Typescript executor. This command to install the typescript executor. With this executor, you can directly execute the typescript file without compiling it)
+tsx <FileName> (To directly execute .ts file without compiling it)
+
 npx playwright test  (to run all the tests sequentially configured in the config file in a headless mode)
 npx playwright test  --headed (to run all the tests sequentially configured in the config file in a head (you will be able to see the actions in the browser) mode)
 npx playwright show-report (To open last HTML report run)
-********************************************************************************
+****************************************************************************************************************************************************************
 
 TypeScript :
 
 Diffrences between JavaScript and TypeScript
 
 JavaScript - it is dynamically typed language
-Typescript - it is statically typed language
+Typescript - it is statically typed language. It is a superset of JavaScript
 
 Why Typescript ?
     Javascript is ECMAScript (ES3, ES4, ES5, ES6 (which is the latest)) complaince i.e. it follows all ECMAScript rules.
     Microsfot cannot add new features to JavaScript which doesn't complaince to ECMAScript. Hence it created Typescript.
     It can add any new features to TypeScript as long as it's generated JavaScript code is ECMAScript complaince.
 
-********************************************************************************
+    Typescript helps us to catch the errors early i.e. during compilation. Also it is suitable for larger and complex projects.
+    In JavaScript, there is no type safety. 
+
+****************************************************************************************************************************************************************
 
 PlayWright : 
 >>> It is a Microsoft tool. It is a node.js library.
