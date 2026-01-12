@@ -1,0 +1,35 @@
+Basics :
+
+Node.js – 
+Node.js is open source, cross platform, backend Javascript run time environment which runs on V8 engine and executes the JavaScript code outside a web browser
+
+Command – npm int playwright
+This will create a new node project in the playwright structure. This is a playwright skeleton required for automation. This command also installs all the dependencies. Run this command in Terminal section of Visual Studio Code
+
+
+Terminal Commands :
+npx playwright test  (to run all the tests sequentially configured in the config file in a headless mode)
+npx playwright test  --headed (to run all the tests sequentially configured in the config file in a head (you will be able to see the actions in the browser) mode)
+npx playwright show-report (To open last HTML report run)
+********************************************************************************
+
+TypeScript :
+
+Diffrences between JavaScript and TypeScript
+
+JavaScript - it is dynamically typed language
+Typescript - it is statically typed language
+
+Why Typescript ?
+    Javascript is ECMAScript (ES3, ES4, ES5, ES6 (which is the latest)) complaince i.e. it follows all ECMAScript rules.
+    Microsfot cannot add new features to JavaScript which doesn't complaince to ECMAScript. Hence it created Typescript.
+    It can add any new features to TypeScript as long as it's generated JavaScript code is ECMAScript complaince.
+
+********************************************************************************
+
+PlayWright : 
+>>> It is a Microsoft tool. It is a node.js library.
+>>> Playwright supports Javascript, Typescript, Java, Python and C#.
+>>> Playwright is a library (like Selenium) and a framework (like Specflow) as well.
+>>> By default, Playwright supports built in reports like HTML, JSON, Junit and more. Supports third-party reporting tools like Allure report.
+
