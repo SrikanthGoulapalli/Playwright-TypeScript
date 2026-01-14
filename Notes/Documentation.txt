@@ -1,35 +1,110 @@
 Basics :
 
+To start working with Typescript, install
+- Node.js
+- Typescript compiler (It will compile the TypeScript code and convert into JavaScript.)
+- VSCode 
+
+
 Node.js – 
-Node.js is open source, cross platform, backend Javascript run time environment which runs on V8 engine and executes the JavaScript code outside a web browser
+Node.js is open source, cross platform, backend Javascript run time environment which runs on V8 engine and executes the JavaScript code outside a web browser. It is like a JRE for JAVA.
+Once you install node.js, you will automatically get NPM.
 
-Command – npm int playwright
-This will create a new node project in the playwright structure. This is a playwright skeleton required for automation. This command also installs all the dependencies. Run this command in Terminal section of Visual Studio Code
+NPM -
+Node Package Manager. By using this, we can install any softwares which run on node.js.
+
+NPX - stands for Node Package Executor
+
+Command – 
+****************************************************************************************************************************************************************
+****************************************************************************************************************************************************************
+****************************************************************************************************************************************************************
+****************************************************************************************************************************************************************
+
+Terminal Commands : https://playwright.dev/docs/running-tests
+
+npm install -g typescript (to install the typescript compiler)
+npm int playwright (This will create a new node project in the playwright structure. This is a playwright skeleton required for automation. This command also installs all the dependencies. Run this command in Terminal section of Visual Studio Code)
+npx playwright -V (To check the installed playwright version)
 
 
-Terminal Commands :
+
+tsc (Stands for TypeScript compiler)
+tsc <Path+TypeScriptFileName> (To compile the typescript file)
+
+For the first time, you get an UnauthorizedAccess error when you try to compile a typescript file. 
+Run the below command to resolve the access issue
+
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
+
+node <FileName> (To run the typescript file. Go into the folder where .js files are present and run this command. Here <FileName> is .js file)
+Example : node Demo.js
+
+npm install -g tsx (Stands for Typescript executor. This command to install the typescript executor. With this executor, you can directly execute the typescript file without compiling it)
+tsx <FileName> (To directly execute .ts file without compiling it)
+
 npx playwright test  (to run all the tests sequentially configured in the config file in a headless mode)
-npx playwright test  --headed (to run all the tests sequentially configured in the config file in a head (you will be able to see the actions in the browser) mode)
+
+npx playwright test <FileName> (To run all the test in that file)
+Ex : npx playwright test TitleVerification.spec.ts
+
+npx playwright test <FileName1> <FileName2> (To run all the tests in those 2 files)
+Ex : npx playwright test TitleVerification.spec.ts URLVerification.spec.ts
+
+npx playwright test -g <TestTitle> (To run all the tests having title matches with <TestTitle>. -g means Global)
+Ex : 
+npx playwright test -g "Verify page URL" (Test(s) with title contains "Verify page URL" gets executed)
+npx playwright test -g "Verify page title" (Test(s) with title contains "Verify page title" gets executed)
+npx playwright test -g "Verify" (Test(s) with title contains "Verify" gets executed)
+
+npx playwright test <FileName> --project=chromium (To run all the test in that file on Chrome browser)
+Ex : npx playwright test TitleVerification.spec.ts --project=chromium
+
+npx playwright test --ui (To run the tests in the UI Mode, kind of a test explorer where you can see all the tests and execute those)
+npx playwright test --debug (To run the tests in the debug Mode)
+
+npx playwright test --headed (to run all the tests sequentially configured in the config file in a head (you will be able to see the actions in the browser) mode)
 npx playwright show-report (To open last HTML report run)
-********************************************************************************
+
+tsc <Folder/Filename> --outDir <OutputJSFolder> (To compile the .ts file into .js file and create .js file in the OutputJSFolder)
+Ex - tsc ./tests/URLVerification.spec.ts --outDir ./js/
+
+
+****************************************************************************************************************************************************************
+****************************************************************************************************************************************************************
+****************************************************************************************************************************************************************
+****************************************************************************************************************************************************************
 
 TypeScript :
 
 Diffrences between JavaScript and TypeScript
 
 JavaScript - it is dynamically typed language
-Typescript - it is statically typed language
+Typescript - it is statically typed language. It is a superset of JavaScript
 
 Why Typescript ?
     Javascript is ECMAScript (ES3, ES4, ES5, ES6 (which is the latest)) complaince i.e. it follows all ECMAScript rules.
     Microsfot cannot add new features to JavaScript which doesn't complaince to ECMAScript. Hence it created Typescript.
     It can add any new features to TypeScript as long as it's generated JavaScript code is ECMAScript complaince.
 
-********************************************************************************
+    Typescript helps us to catch the errors early i.e. during compilation. Also it is suitable for larger and complex projects.
+    In JavaScript, there is no type safety. 
 
+****************************************************************************************************************************************************************
 PlayWright : 
+
 >>> It is a Microsoft tool. It is a node.js library.
 >>> Playwright supports Javascript, Typescript, Java, Python and C#.
 >>> Playwright is a library (like Selenium) and a framework (like Specflow) as well.
 >>> By default, Playwright supports built in reports like HTML, JSON, Junit and more. Supports third-party reporting tools like Allure report.
+
+
+Creating New Tests :
+Filename - Always give <AnyName.spec.ts> as the filename
+
+Mandatory :
+>> 'test' and 'expect' are the functions which we need to import from '@playwright/test' Package
+
+Fixtures or Global Variables avialable in playwright - 'browser' and 'page'
 
