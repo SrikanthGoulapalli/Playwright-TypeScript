@@ -16,9 +16,12 @@ Node Package Manager. By using this, we can install any softwares which run on n
 NPX - stands for Node Package Executor
 
 Command – 
+****************************************************************************************************************************************************************
+****************************************************************************************************************************************************************
+****************************************************************************************************************************************************************
+****************************************************************************************************************************************************************
 
-
-Terminal Commands :
+Terminal Commands : https://playwright.dev/docs/running-tests
 
 npm install -g typescript (to install the typescript compiler)
 npm int playwright (This will create a new node project in the playwright structure. This is a playwright skeleton required for automation. This command also installs all the dependencies. Run this command in Terminal section of Visual Studio Code)
@@ -42,8 +45,35 @@ npm install -g tsx (Stands for Typescript executor. This command to install the 
 tsx <FileName> (To directly execute .ts file without compiling it)
 
 npx playwright test  (to run all the tests sequentially configured in the config file in a headless mode)
-npx playwright test  --headed (to run all the tests sequentially configured in the config file in a head (you will be able to see the actions in the browser) mode)
+
+npx playwright test <FileName> (To run all the test in that file)
+Ex : npx playwright test TitleVerification.spec.ts
+
+npx playwright test <FileName1> <FileName2> (To run all the tests in those 2 files)
+Ex : npx playwright test TitleVerification.spec.ts URLVerification.spec.ts
+
+npx playwright test -g <TestTitle> (To run all the tests having title matches with <TestTitle>. -g means Global)
+Ex : 
+npx playwright test -g "Verify page URL" (Test(s) with title contains "Verify page URL" gets executed)
+npx playwright test -g "Verify page title" (Test(s) with title contains "Verify page title" gets executed)
+npx playwright test -g "Verify" (Test(s) with title contains "Verify" gets executed)
+
+npx playwright test <FileName> --project=chromium (To run all the test in that file on Chrome browser)
+Ex : npx playwright test TitleVerification.spec.ts --project=chromium
+
+npx playwright test --ui (To run the tests in the UI Mode, kind of a test explorer where you can see all the tests and execute those)
+npx playwright test --debug (To run the tests in the debug Mode)
+
+npx playwright test --headed (to run all the tests sequentially configured in the config file in a head (you will be able to see the actions in the browser) mode)
 npx playwright show-report (To open last HTML report run)
+
+tsc <Folder/Filename> --outDir <OutputJSFolder> (To compile the .ts file into .js file and create .js file in the OutputJSFolder)
+Ex - tsc ./tests/URLVerification.spec.ts --outDir ./js/
+
+
+****************************************************************************************************************************************************************
+****************************************************************************************************************************************************************
+****************************************************************************************************************************************************************
 ****************************************************************************************************************************************************************
 
 TypeScript :
