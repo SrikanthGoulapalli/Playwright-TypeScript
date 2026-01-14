@@ -13,6 +13,8 @@ Once you install node.js, you will automatically get NPM.
 NPM -
 Node Package Manager. By using this, we can install any softwares which run on node.js.
 
+NPX - stands for Node Package Executor
+
 Command – 
 
 
@@ -20,6 +22,9 @@ Terminal Commands :
 
 npm install -g typescript (to install the typescript compiler)
 npm int playwright (This will create a new node project in the playwright structure. This is a playwright skeleton required for automation. This command also installs all the dependencies. Run this command in Terminal section of Visual Studio Code)
+npx playwright -V (To check the installed playwright version)
+
+
 
 tsc (Stands for TypeScript compiler)
 tsc <Path+TypeScriptFileName> (To compile the typescript file)
@@ -57,10 +62,19 @@ Why Typescript ?
     In JavaScript, there is no type safety. 
 
 ****************************************************************************************************************************************************************
-
 PlayWright : 
+
 >>> It is a Microsoft tool. It is a node.js library.
 >>> Playwright supports Javascript, Typescript, Java, Python and C#.
 >>> Playwright is a library (like Selenium) and a framework (like Specflow) as well.
 >>> By default, Playwright supports built in reports like HTML, JSON, Junit and more. Supports third-party reporting tools like Allure report.
+
+
+Creating New Tests :
+Filename - Always give <AnyName.spec.ts> as the filename
+
+Mandatory :
+>> 'test' and 'expect' are the functions which we need to import from '@playwright/test' Package
+
+Fixtures or Global Variables avialable in playwright - 'browser' and 'page'
 
